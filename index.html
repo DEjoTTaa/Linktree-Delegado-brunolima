@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delegado Bruno Lima | Press Kit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            background: #1a0a0a;
+            overscroll-behavior: none;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            min-height: 100dvh;
+            color: #fff;
+            overscroll-behavior: none;
+            -webkit-overflow-scrolling: touch;
+            background-color: #1a0a0a;
+            background-image:
+                radial-gradient(ellipse 80px 60px at 10% 20%, #3a1a1a 0%, transparent 100%),
+                radial-gradient(ellipse 100px 70px at 85% 15%, #1c0c0c 0%, transparent 100%),
+                radial-gradient(ellipse 120px 80px at 40% 35%, #4a1515 0%, transparent 100%),
+                radial-gradient(ellipse 90px 65px at 70% 45%, #351818 0%, transparent 100%),
+                radial-gradient(ellipse 110px 75px at 20% 55%, #1c0c0c 0%, transparent 100%),
+                radial-gradient(ellipse 95px 70px at 55% 60%, #3a1a1a 0%, transparent 100%),
+                radial-gradient(ellipse 130px 85px at 90% 70%, #4a1515 0%, transparent 100%),
+                radial-gradient(ellipse 85px 60px at 30% 75%, #351818 0%, transparent 100%),
+                radial-gradient(ellipse 105px 75px at 60% 85%, #1c0c0c 0%, transparent 100%),
+                radial-gradient(ellipse 120px 80px at 15% 90%, #4a1515 0%, transparent 100%),
+                radial-gradient(ellipse 100px 70px at 80% 95%, #3a1a1a 0%, transparent 100%),
+                radial-gradient(ellipse 75px 55px at 45% 10%, #351818 0%, transparent 100%),
+                radial-gradient(ellipse 110px 80px at 5% 45%, #4a1515 0%, transparent 100%),
+                radial-gradient(ellipse 90px 65px at 95% 55%, #3a1a1a 0%, transparent 100%),
+                radial-gradient(ellipse 100px 70px at 50% 45%, #1c0c0c 0%, transparent 100%),
+                radial-gradient(ellipse 80px 60px at 75% 30%, #4a1515 0%, transparent 100%),
+                radial-gradient(ellipse 115px 80px at 25% 30%, #351818 0%, transparent 100%),
+                radial-gradient(ellipse 95px 65px at 65% 70%, #1c0c0c 0%, transparent 100%);
+        }
+
+        .banner {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .banner img {
+            width: 100%;
+            display: block;
+        }
+
+        .banner::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            background: linear-gradient(to bottom, transparent, #1a0a0a);
+            pointer-events: none;
+        }
+
+        .page {
+            position: relative;
+            z-index: 1;
+            max-width: 480px;
+            margin: -40px auto 0;
+            padding: 0 24px 40px;
+        }
+
+        /* Perfil */
+        .profile {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .avatar {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            margin: 0 auto 18px;
+            overflow: hidden;
+            border: 3px solid rgba(77,141,255,0.4);
+        }
+
+        .name {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+        }
+
+        .handle {
+            font-size: 14px;
+            color: #4d8dff;
+            margin-bottom: 10px;
+        }
+
+        .bio {
+            font-size: 14px;
+            color: rgba(255,255,255,0.95);
+            line-height: 1.5;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+        }
+
+        /* Links */
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        /* Botao base */
+        .link {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 16px 22px;
+            background: rgba(0,0,0,0.55);
+            border: 1px solid rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 14px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            overflow: hidden;
+            transition: border-color 0.3s, transform 0.2s;
+        }
+
+        /* Glow que segue o mouse */
+        .link .glow {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(77,141,255,0.12) 0%, transparent 70%);
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .link:hover .glow {
+            opacity: 1;
+        }
+
+        .link:hover {
+            border-color: rgba(77,141,255,0.35);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(77,141,255,0.1);
+        }
+
+        .link:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        /* Icone do link */
+        .link-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.07);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-right: 14px;
+            transition: background 0.3s;
+        }
+
+        .link:hover .link-icon {
+            background: rgba(77,141,255,0.15);
+        }
+
+        .link-icon img {
+            width: 110%;
+            height: 110%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .link-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: #4d8dff;
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .link-icon i {
+            font-size: 20px;
+            color: #4d8dff;
+        }
+
+        .link.primary .link-icon i {
+            color: #fff;
+        }
+
+        .link-text {
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .link-label {
+            display: block;
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 2px;
+        }
+
+        .link-desc {
+            display: block;
+            font-size: 12px;
+            color: rgba(255,255,255,0.7);
+            font-weight: 400;
+        }
+
+        /* Seta */
+        .link-arrow {
+            position: relative;
+            z-index: 1;
+            margin-left: 12px;
+            opacity: 0;
+            transform: translateX(-6px);
+            transition: opacity 0.25s, transform 0.25s;
+        }
+
+        .link:hover .link-arrow {
+            opacity: 0.7;
+            transform: translateX(0);
+        }
+
+        .link-arrow svg {
+            width: 16px;
+            height: 16px;
+            stroke: #4d8dff;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* Chevron para botoes expansiveis */
+        .link-chevron {
+            position: relative;
+            z-index: 1;
+            margin-left: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .link-chevron svg {
+            width: 18px;
+            height: 18px;
+            stroke: #4d8dff;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .expandable.active .link-chevron {
+            transform: rotate(180deg);
+        }
+
+        /* Botao destaque */
+        .link.primary {
+            background: #2563eb;
+            border-color: #2563eb;
+            color: #fff;
+        }
+
+        .link.primary .link-icon {
+            background: rgba(255,255,255,0.15);
+        }
+
+        .link.primary:hover .link-icon {
+            background: rgba(255,255,255,0.25);
+        }
+
+        .link.primary .link-icon svg {
+            stroke: #fff;
+        }
+
+        .link.primary .link-desc {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .link.primary .link-arrow svg {
+            stroke: #fff;
+        }
+
+        .link.primary .glow {
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+
+        .link.primary:hover {
+            background: #1d4ed8;
+            border-color: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 24px rgba(37,99,235,0.35);
+        }
+
+        /* Painel de sub-botoes */
+        .sub-links {
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+            transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
+            margin-top: 0;
+        }
+
+        .sub-links.open {
+            max-height: 2000px;
+            opacity: 1;
+            margin-top: 10px;
+        }
+
+        .sub-links-inner {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding-left: 20px;
+        }
+
+        .sub-links-inner .link {
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 14px 18px;
+            border-radius: 12px;
+        }
+
+        .sub-links-inner .link-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+        }
+
+        .sub-links-inner .link-label {
+            font-size: 14px;
+        }
+
+        .sub-links-inner .link-desc {
+            font-size: 11px;
+        }
+
+        /* Nivel 3 - sub-sub-links */
+        .sub-links-inner .sub-links {
+            margin-top: 0;
+        }
+
+        .sub-links-inner .sub-links.open {
+            margin-top: 10px;
+        }
+
+        .sub-links-inner .sub-links .sub-links-inner {
+            padding-left: 16px;
+        }
+
+        .sub-links-inner .sub-links .sub-links-inner .link {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.07);
+            padding: 12px 16px;
+            border-radius: 10px;
+        }
+
+        .sub-links-inner .sub-links .sub-links-inner .link-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 7px;
+        }
+
+        .sub-links-inner .sub-links .sub-links-inner .link-label {
+            font-size: 13px;
+        }
+
+        .sub-links-inner .sub-links .sub-links-inner .link-desc {
+            font-size: 10px;
+        }
+
+        /* Ripple ao clicar */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(77,141,255,0.15);
+            transform: scale(0);
+            animation: ripple-anim 0.5s ease-out forwards;
+            pointer-events: none;
+        }
+
+        .link.primary .ripple {
+            background: rgba(255,255,255,0.2);
+        }
+
+        @keyframes ripple-anim {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 48px;
+        }
+
+        .footer span {
+            font-size: 12px;
+            color: rgba(255,255,255,0.2);
+        }
+
+        /* Desktop */
+        @media (min-width: 769px) {
+            body {
+                background: url('./Fundo Delegado bruno São paulo.jpg') no-repeat 58% center fixed;
+                background-size: cover;
+            }
+            body::before {
+                content: '';
+                position: fixed;
+                top: -5%;
+                left: -5%;
+                width: 110%;
+                height: 110%;
+                background: rgba(0, 0, 0, 0.75);
+                z-index: 0;
+            }
+            .banner {
+                display: none;
+            }
+            .page {
+                margin-top: 0;
+                padding-top: 56px;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .page { padding: 0 18px 32px; margin-top: -40px; }
+            .avatar { width: 80px; height: 80px; }
+            .name { font-size: 20px; }
+            .link { padding: 14px 18px; border-radius: 12px; }
+            .link-icon { width: 36px; height: 36px; border-radius: 8px; }
+            .sub-links-inner { padding-left: 14px; }
+            .sub-links-inner .link { padding: 12px 16px; }
+            .sub-links-inner .link-icon { width: 32px; height: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="banner">
+        <img src="./Fundo Delegado bruno São paulo.jpg" alt="Delegado Bruno Lima - Deputado Federal">
+    </div>
+
+    <div class="page">
+
+        <div class="profile">
+            <div class="avatar">
+                <img src="./Foto Bruno delegado.jpeg" alt="Bruno Lima" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+            <h1 class="name">Delegado Bruno Lima</h1>
+            <p class="handle">@del.brunolima</p>
+            <p class="bio">Bruno Marcello de Oliveira Lima, conhecido como Delegado Bruno Lima, tem 39 anos e atuou como delegado de Polícia Civil do Estado de São Paulo desde 2011 até ser eleito Deputado Estadual em 2018 e eleito Deputado Federal em 2022, sendo o 6º mais votado do Brasil.<br><br>Ao longo de sua carreira policial, destacou-se no combate aos maus-tratos contra animais, incluindo crimes praticados contra animais silvestres, além de atuar no enfrentamento à violência doméstica.<br><br>É criador do Movimento Cadeia para Maus-Tratos e tornou-se pioneiro na defesa da causa animal dentro da segurança pública, contribuindo para ampliar a fiscalização, a responsabilização dos agressores e a conscientização da sociedade sobre a proteção dos animais.</p>
+        </div>
+
+        <div class="links">
+
+            <!-- 1. SITE - redireciona direto -->
+            <a href="https://delegadobrunolima.com.br/" class="link primary" target="_blank" rel="noopener">
+                <span class="glow"></span>
+                <span class="link-icon">
+                    <img src="./Logo Pioneiro Preta.png" alt="Site oficial">
+                </span>
+                <span class="link-text">
+                    <span class="link-label">Site Oficial</span>
+                    <span class="link-desc">delegadobrunolima.com.br</span>
+                </span>
+                <span class="link-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+            </a>
+
+            <!-- 2. FOTOS OFICIAIS - redireciona direto (link placeholder) -->
+            <a href="https://drive.google.com/drive/folders/1qcWLbdFZO7Kop3ZPpH4u-MgYCWTKMPfd?usp=sharing" class="link" target="_blank" rel="noopener" id="fotos-oficiais">
+                <span class="glow"></span>
+                <span class="link-icon">
+                    <i class="fa-solid fa-camera"></i>
+                </span>
+                <span class="link-text">
+                    <span class="link-label">Fotos Oficiais</span>
+                </span>
+                <span class="link-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+            </a>
+
+            <!-- 3. REDES SOCIAIS - expande sub-botoes -->
+            <div class="link expandable" data-target="redes-sociais" role="button" tabindex="0">
+                <span class="glow"></span>
+                <span class="link-icon">
+                    <i class="fa-solid fa-share-nodes"></i>
+                </span>
+                <span class="link-text">
+                    <span class="link-label">Redes Sociais</span>
+                    <span class="link-desc">Instagram, TikTok, Facebook e X</span>
+                </span>
+                <span class="link-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+            </div>
+
+            <div class="sub-links" id="redes-sociais">
+                <div class="sub-links-inner">
+                    <a href="https://www.instagram.com/del.brunolima/" class="link" target="_blank" rel="noopener">
+                        <span class="glow"></span>
+                        <span class="link-icon">
+                            <i class="fa-brands fa-instagram"></i>
+                        </span>
+                        <span class="link-text">
+                            <span class="link-label">Instagram</span>
+                            <span class="link-desc">@del.brunolima</span>
+                        </span>
+                        <span class="link-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+                    </a>
+
+                    <a href="https://www.tiktok.com/@del.brunolima" class="link" target="_blank" rel="noopener">
+                        <span class="glow"></span>
+                        <span class="link-icon">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </span>
+                        <span class="link-text">
+                            <span class="link-label">TikTok</span>
+                            <span class="link-desc">@del.brunolima</span>
+                        </span>
+                        <span class="link-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+                    </a>
+
+                    <a href="https://www.facebook.com/profile.php?id=100044228269758" class="link" target="_blank" rel="noopener">
+                        <span class="glow"></span>
+                        <span class="link-icon">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </span>
+                        <span class="link-text">
+                            <span class="link-label">Facebook</span>
+                            <span class="link-desc">Perfil oficial</span>
+                        </span>
+                        <span class="link-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+                    </a>
+
+                    <a href="https://x.com/del_brunolima" class="link" target="_blank" rel="noopener">
+                        <span class="glow"></span>
+                        <span class="link-icon">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </span>
+                        <span class="link-text">
+                            <span class="link-label">X / Twitter</span>
+                            <span class="link-desc">@del_brunolima</span>
+                        </span>
+                        <span class="link-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 4. FORMULARIOS - expande sub-botoes -->
+            <div class="link expandable" data-target="formularios" role="button" tabindex="0">
+                <span class="glow"></span>
+                <span class="link-icon">
+                    <i class="fa-solid fa-file-lines"></i>
+                </span>
+                <span class="link-text">
+                    <span class="link-label">Formulários</span>
+                    <span class="link-desc">Adesivos e Abaixo-assinados</span>
+                </span>
+                <span class="link-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+            </div>
+
+            <div class="sub-links" id="formularios">
+                <div class="sub-links-inner">
+
+                    <!-- ADESIVOS - expande -->
+                    <div class="link expandable" data-target="adesivos" role="button" tabindex="0">
+                        <span class="glow"></span>
+                        <span class="link-icon">
+                            <i class="fa-solid fa-note-sticky"></i>
+                        </span>
+                        <span class="link-text">
+                            <span class="link-label">Adesivos</span>
+                            <span class="link-desc">Solicite seus adesivos</span>
+                        </span>
+                        <span class="link-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    </div>
+
+                    <div class="sub-links" id="adesivos">
+                        <div class="sub-links-inner">
+                            <a href="https://dlbrunolima.com/adesivo-casa/" class="link" target="_blank" rel="noopener">
+                                <span class="glow"></span>
+                                <span class="link-icon">
+                                    <img src="./Adesivo Casa.png" alt="Adesivo Casa">
+                                </span>
+                                <span class="link-text">
+                                    <span class="link-label">Adesivo Casa</span>
+                                    <span class="link-desc">Somos a favor de cadeia para maus-tratos!</span>
+                                </span>
+                                <span class="link-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+                            </a>
+
+                            <a href="https://dlbrunolima.com/campanha-eufreio-para-animais/" class="link" target="_blank" rel="noopener">
+                                <span class="glow"></span>
+                                <span class="link-icon">
+                                    <img src="./Patinha eu freio.png" alt="Adesivo Patinha">
+                                </span>
+                                <span class="link-text">
+                                    <span class="link-label">Adesivo Patinha</span>
+                                    <span class="link-desc">Eu freio para animais</span>
+                                </span>
+                                <span class="link-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+                            </a>
+
+                            <a href="https://dlbrunolima.com/adesivo-cadeiaparamaustratos-ads/" class="link" target="_blank" rel="noopener">
+                                <span class="glow"></span>
+                                <span class="link-icon">
+                                    <img src="./Logo Cadeia para maus-tratos.png" alt="Adesivo Cadeia para Maus-Tratos">
+                                </span>
+                                <span class="link-text">
+                                    <span class="link-label">Adesivo Cadeia para Maus-Tratos</span>
+                                    <span class="link-desc">Faça parte do movimento</span>
+                                </span>
+                                <span class="link-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+                            </a>
+
+                            <a href="https://dlbrunolima.com/calendario-patinha/" class="link" target="_blank" rel="noopener">
+                                <span class="glow"></span>
+                                <span class="link-icon">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                </span>
+                                <span class="link-text">
+                                    <span class="link-label">Calendário Patinha</span>
+                                </span>
+                                <span class="link-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- ABAIXO-ASSINADOS - expande -->
+                    <div class="link expandable" data-target="abaixo-assinados" role="button" tabindex="0">
+                        <span class="glow"></span>
+                        <span class="link-icon">
+                            <i class="fa-solid fa-pen-nib"></i>
+                        </span>
+                        <span class="link-text">
+                            <span class="link-label">Abaixo-assinados</span>
+                            <span class="link-desc">Assine nossas causas</span>
+                        </span>
+                        <span class="link-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    </div>
+
+                    <div class="sub-links" id="abaixo-assinados">
+                        <div class="sub-links-inner">
+                            <a href="https://dlbrunolima.com/formularios/formulariodenuncia/" class="link" target="_blank" rel="noopener">
+                                <span class="glow"></span>
+                                <span class="link-icon">
+                                    <i class="fa-solid fa-triangle-exclamation"></i>
+                                </span>
+                                <span class="link-text">
+                                    <span class="link-label">Formulário de Denúncia</span>
+                                </span>
+                                <span class="link-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+                            </a>
+
+                            <a href="https://dlbrunolima.com/punicao-para-zoofilia/" class="link" target="_blank" rel="noopener">
+                                <span class="glow"></span>
+                                <span class="link-icon">
+                                    <i class="fa-solid fa-gavel"></i>
+                                </span>
+                                <span class="link-text">
+                                    <span class="link-label">Castração Química Zoofilia</span>
+                                </span>
+                                <span class="link-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+                            </a>
+
+                            <a href="https://dlbrunolima.com/abandonou-perdeu-cnh/" class="link" target="_blank" rel="noopener">
+                                <span class="glow"></span>
+                                <span class="link-icon">
+                                    <i class="fa-solid fa-id-card"></i>
+                                </span>
+                                <span class="link-text">
+                                    <span class="link-label">Abandonou, Perdeu a CNH</span>
+                                </span>
+                                <span class="link-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+                            </a>
+
+                            <a href="https://dlbrunolima.com/justica-pelo-cavalo/" class="link" target="_blank" rel="noopener">
+                                <span class="glow"></span>
+                                <span class="link-icon">
+                                    <i class="fa-solid fa-scale-balanced"></i>
+                                </span>
+                                <span class="link-text">
+                                    <span class="link-label">Maus-Tratos Como Crime Hediondo</span>
+                                </span>
+                                <span class="link-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+                            </a>
+
+                            <a href="https://www.dlbrunolima.com/formularios/abaixoassinado-fogos/" class="link" target="_blank" rel="noopener">
+                                <span class="glow"></span>
+                                <span class="link-icon">
+                                    <i class="fa-solid fa-ban"></i>
+                                </span>
+                                <span class="link-text">
+                                    <span class="link-label">Contra Fogos com Estampido</span>
+                                </span>
+                                <span class="link-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+                            </a>
+
+                            <a href="https://dlbrunolima.com/quero-uma-palestra-na-escola/" class="link" target="_blank" rel="noopener">
+                                <span class="glow"></span>
+                                <span class="link-icon">
+                                    <i class="fa-solid fa-school"></i>
+                                </span>
+                                <span class="link-text">
+                                    <span class="link-label">Palestra em Escolas</span>
+                                </span>
+                                <span class="link-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+                            </a>
+
+                            <a href="https://dlbrunolima.com/quero-uma-palestra-na-minha-cidade/" class="link" target="_blank" rel="noopener">
+                                <span class="glow"></span>
+                                <span class="link-icon">
+                                    <i class="fa-solid fa-city"></i>
+                                </span>
+                                <span class="link-text">
+                                    <span class="link-label">Palestra nas Cidades</span>
+                                </span>
+                                <span class="link-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+                            </a>
+
+                            <a href="https://dlbrunolima.com/pl-crimes-hediondo/" class="link" target="_blank" rel="noopener">
+                                <span class="glow"></span>
+                                <span class="link-icon">
+                                    <i class="fa-solid fa-lock"></i>
+                                </span>
+                                <span class="link-text">
+                                    <span class="link-label">PL Prisão Perpétua - Crimes Hediondos</span>
+                                </span>
+                                <span class="link-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <span>Equipe Delegado Bruno Lima</span>
+        </div>
+
+    </div>
+
+    <script>
+        // Expandir/recolher sub-botoes
+        document.querySelectorAll('.expandable').forEach(btn => {
+            btn.addEventListener('click', e => {
+                e.preventDefault();
+                e.stopPropagation();
+                const targetId = btn.getAttribute('data-target');
+                const subLinks = document.getElementById(targetId);
+                const parentContainer = btn.parentElement;
+
+                // Fecha outros paineis do mesmo nivel
+                parentContainer.querySelectorAll(':scope > .sub-links.open').forEach(panel => {
+                    if (panel.id !== targetId) {
+                        panel.classList.remove('open');
+                        const otherBtn = parentContainer.querySelector(':scope > [data-target="' + panel.id + '"]');
+                        if (otherBtn) otherBtn.classList.remove('active');
+                    }
+                });
+
+                // Alterna o painel clicado
+                subLinks.classList.toggle('open');
+                btn.classList.toggle('active');
+            });
+
+            btn.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    btn.click();
+                }
+            });
+        });
+
+        // Glow que segue o mouse dentro do botao
+        document.querySelectorAll('.link').forEach(link => {
+            const glow = link.querySelector('.glow');
+            if (!glow) return;
+
+            link.addEventListener('mousemove', e => {
+                const rect = link.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                glow.style.left = x + 'px';
+                glow.style.top = y + 'px';
+            });
+
+            // Ripple ao clicar
+            link.addEventListener('click', e => {
+                const rect = link.getBoundingClientRect();
+                const ripple = document.createElement('span');
+                ripple.className = 'ripple';
+                ripple.style.left = (e.clientX - rect.left) + 'px';
+                ripple.style.top = (e.clientY - rect.top) + 'px';
+                ripple.style.width = ripple.style.height = Math.max(rect.width, rect.height) + 'px';
+                link.appendChild(ripple);
+                ripple.addEventListener('animationend', () => ripple.remove());
+            });
+        });
+    </script>
+
+</body>
+</html>
